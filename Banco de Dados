@@ -1,0 +1,458 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled0.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyNVh6Mv/tkqLErML+njI9B4",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Leonardomunhoz12/Fecap/blob/main/Banco%20de%20Dados\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "RsVZwlmzPhgs"
+      },
+      "source": [
+        "import pandas as pd"
+      ],
+      "execution_count": 1,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "JvJLgU8PP5PT"
+      },
+      "source": [
+        "dic = {\"Nome\":[\"Isa\", \"Peter\",\"x\"],\n",
+        "       \"Idade\":[\"19\",\"28\",\"0\"],\n",
+        "       \"Salário\":[\"1900\",\"5000\", \"100\"],\n",
+        "       \"Gênero\":[\"F\", \"M\", \"NB\"],\n",
+        "       \"Cargo\":[\"Gerente\", \"Supervisor\",\"\"]}\n",
+        "\n"
+      ],
+      "execution_count": 7,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 142
+        },
+        "id": "qlgvz6-gSp1f",
+        "outputId": "e40e3917-831a-468d-ae03-f92662b22f10"
+      },
+      "source": [
+        "df = pd.DataFrame(dic)\n",
+        "df"
+      ],
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Nome</th>\n",
+              "      <th>Idade</th>\n",
+              "      <th>Salário</th>\n",
+              "      <th>Gênero</th>\n",
+              "      <th>Cargo</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>Isa</td>\n",
+              "      <td>19</td>\n",
+              "      <td>1900</td>\n",
+              "      <td>F</td>\n",
+              "      <td>Gerente</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Peter</td>\n",
+              "      <td>28</td>\n",
+              "      <td>5000</td>\n",
+              "      <td>M</td>\n",
+              "      <td>Supervisor</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>x</td>\n",
+              "      <td>0</td>\n",
+              "      <td>100</td>\n",
+              "      <td>NB</td>\n",
+              "      <td></td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "    Nome Idade Salário Gênero       Cargo\n",
+              "0    Isa    19    1900      F     Gerente\n",
+              "1  Peter    28    5000      M  Supervisor\n",
+              "2      x     0     100     NB            "
+            ]
+          },
+          "metadata": {},
+          "execution_count": 8
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PuzwPBu1TLuv",
+        "outputId": "7304d5c3-1a65-49cc-ab1c-bec1835f9437"
+      },
+      "source": [
+        "print(df)"
+      ],
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "    Nome Idade Salário Gênero       Cargo\n",
+            "0    Isa    19    1900      F     Gerente\n",
+            "1  Peter    28    5000      M  Supervisor\n",
+            "2      x     0     100     NB            \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Sqi77Lv8TP2U",
+        "outputId": "03665ff6-1b70-4dca-c773-02e603f0c823"
+      },
+      "source": [
+        "df.info"
+      ],
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "<bound method DataFrame.info of     Nome Idade Salário Gênero       Cargo\n",
+              "0    Isa    19    1900      F     Gerente\n",
+              "1  Peter    28    5000      M  Supervisor\n",
+              "2      x     0     100     NB            >"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 10
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 142
+        },
+        "id": "slWKiQcBToc8",
+        "outputId": "6e6ba542-590a-4441-91f9-a1f0794a8e0e"
+      },
+      "source": [
+        "pd.get_dummies(df, columns=[\"Gênero\"])"
+      ],
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Nome</th>\n",
+              "      <th>Idade</th>\n",
+              "      <th>Salário</th>\n",
+              "      <th>Cargo</th>\n",
+              "      <th>Gênero_F</th>\n",
+              "      <th>Gênero_M</th>\n",
+              "      <th>Gênero_NB</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>Isa</td>\n",
+              "      <td>19</td>\n",
+              "      <td>1900</td>\n",
+              "      <td>Gerente</td>\n",
+              "      <td>1</td>\n",
+              "      <td>0</td>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Peter</td>\n",
+              "      <td>28</td>\n",
+              "      <td>5000</td>\n",
+              "      <td>Supervisor</td>\n",
+              "      <td>0</td>\n",
+              "      <td>1</td>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>x</td>\n",
+              "      <td>0</td>\n",
+              "      <td>100</td>\n",
+              "      <td></td>\n",
+              "      <td>0</td>\n",
+              "      <td>0</td>\n",
+              "      <td>1</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "    Nome Idade Salário       Cargo  Gênero_F  Gênero_M  Gênero_NB\n",
+              "0    Isa    19    1900     Gerente         1         0          0\n",
+              "1  Peter    28    5000  Supervisor         0         1          0\n",
+              "2      x     0     100                     0         0          1"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 11
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 142
+        },
+        "id": "Fa1odpg8UHDD",
+        "outputId": "d15c866b-b55e-411f-8399-b18f568dbd3b"
+      },
+      "source": [
+        "df"
+      ],
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Nome</th>\n",
+              "      <th>Idade</th>\n",
+              "      <th>Salário</th>\n",
+              "      <th>Gênero</th>\n",
+              "      <th>Cargo</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>Isa</td>\n",
+              "      <td>19</td>\n",
+              "      <td>1900</td>\n",
+              "      <td>F</td>\n",
+              "      <td>Gerente</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Peter</td>\n",
+              "      <td>28</td>\n",
+              "      <td>5000</td>\n",
+              "      <td>M</td>\n",
+              "      <td>Supervisor</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>x</td>\n",
+              "      <td>0</td>\n",
+              "      <td>100</td>\n",
+              "      <td>NB</td>\n",
+              "      <td></td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "    Nome Idade Salário Gênero       Cargo\n",
+              "0    Isa    19    1900      F     Gerente\n",
+              "1  Peter    28    5000      M  Supervisor\n",
+              "2      x     0     100     NB            "
+            ]
+          },
+          "metadata": {},
+          "execution_count": 12
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 142
+        },
+        "id": "__S2IE61VJl-",
+        "outputId": "58fb6062-0463-41ed-b65e-f690b8234102"
+      },
+      "source": [
+        "df"
+      ],
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Nome</th>\n",
+              "      <th>Idade</th>\n",
+              "      <th>Salário</th>\n",
+              "      <th>Gênero</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>Isa</td>\n",
+              "      <td>19</td>\n",
+              "      <td>1900</td>\n",
+              "      <td>F</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Peter</td>\n",
+              "      <td>28</td>\n",
+              "      <td>5000</td>\n",
+              "      <td>M</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>x</td>\n",
+              "      <td>0</td>\n",
+              "      <td>100</td>\n",
+              "      <td>NB</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "    Nome Idade Salário Gênero\n",
+              "0    Isa    19    1900      F\n",
+              "1  Peter    28    5000      M\n",
+              "2      x     0     100     NB"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 19
+        }
+      ]
+    }
+  ]
+}
